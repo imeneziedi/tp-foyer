@@ -42,7 +42,7 @@ pipeline {
                     }
                 }
             }
-        }
+        
         stage('cleaning image'){
             steps{
                 script {
