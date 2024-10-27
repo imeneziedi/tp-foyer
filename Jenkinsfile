@@ -1,11 +1,5 @@
 pipeline {
     agent any
-    environment {
-        registry = "imenziedi/tp-foyer"
-        registryCredential = 'dockerhub'
-        dockerImage = ''
-    
-    }
 
     stages {
 
