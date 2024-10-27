@@ -33,15 +33,7 @@ pipeline {
             }
         }
 
-        stage('push docker  image'){
-            steps{
-                script {
-                        sh "docker login"
 
-                        sh "docker push  imenziedi/tp-foyer:v1"
-                    }
-                }
-            }
         
         stage('cleaning image'){
             steps{
