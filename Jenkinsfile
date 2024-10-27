@@ -27,7 +27,7 @@ pipeline {
             steps {
                 script {
 
-                    sh " sudo docker build ./ -t imenziedi/tp-foyer:v1 "
+                    sh "  docker build ./ -t imenziedi/tp-foyer:v1 "
                    
                    
                 }
@@ -38,7 +38,7 @@ pipeline {
             steps{
                 script {
                     
-                        sh " sudo docker push  imenziedi/tp-foyer:v1 "
+                        sh "  docker push  imenziedi/tp-foyer:v1 "
                     }
                 }
             }
@@ -47,7 +47,7 @@ pipeline {
             steps{
                 script {
                      
-                        sh " sudo docker rmi imenziedi/tp-foyer:v1"
+                        sh "  docker rmi imenziedi/tp-foyer:v1"
                     
                 }
             }
