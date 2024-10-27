@@ -27,7 +27,7 @@ pipeline {
             steps {
                 script {
 
-                    sh " docker build ./ -t nagui69/kaddem:abdelhak "
+                    sh " sudo docker build ./ -t imenziedi/tp-foyer:v1 "
                    
                    
                 }
@@ -37,8 +37,8 @@ pipeline {
         stage('push docker  image'){
             steps{
                 script {
-                     docker.withRegistry('', registryCredential) {
-                        sh " docker push nagui69/kaddem:abdelhak "
+                    
+                        sh " sudo docker push  imenziedi/tp-foyer:v1 "
                     }
                 }
             }
@@ -47,7 +47,7 @@ pipeline {
             steps{
                 script {
                      
-                        sh " docker rmi nagui69/kaddem:abdelhak"
+                        sh " sudo docker rmi imenziedi/tp-foyer:v1"
                     
                 }
             }
