@@ -15,7 +15,7 @@ pipeline {
                 
                 sh 'mvn clean'
                 sh 'mvn compile'
-                sh 'mvn sonar:sonar -Dsonar.login=admin -Dsonar.password=admin1'
+                sh 'mvn sonar:sonar -Dsonar.login=admin -Dsonar.password=Imen1234567*'
             }
         }
         stage ('maven build') {
