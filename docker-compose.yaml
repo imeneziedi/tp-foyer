@@ -10,7 +10,7 @@ services:
       - /home/mysql/data:/var/lib/mysql
 
   spring_app:
-    image: imenziedi:tp-foyer:v1
+    image: imenziedi/tp-foyer
 
     restart: on-failure
     ports:
