@@ -26,7 +26,6 @@ pipeline {
         stage('Building docker  image') {
             steps {
                 script {
-
                     sh "  docker build ./ -t imenziedi/tp-foyer:v1 "
                    
                    
@@ -37,7 +36,8 @@ pipeline {
         stage('push docker  image'){
             steps{
                 script {
-                    
+                        sh " docker login "
+
                         sh "  docker push  imenziedi/tp-foyer:v1 "
                     }
                 }
@@ -46,7 +46,7 @@ pipeline {
         stage('cleaning image'){
             steps{
                 script {
-                     
+       
                         sh "  docker rmi imenziedi/tp-foyer:v1"
                     
                 }
