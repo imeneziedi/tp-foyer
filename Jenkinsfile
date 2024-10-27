@@ -1,7 +1,7 @@
 pipeline {
     agent any
     environment {
-        registry = "nagui69/kaddem"
+        registry = "imenziedi/tp-foyer"
         registryCredential = 'dockerhub'
         dockerImage = ''
     
