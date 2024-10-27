@@ -33,17 +33,6 @@ pipeline {
             }
         }
 
-
-        
-        stage('cleaning image'){
-            steps{
-                script {
-       
-                        sh "docker rmi imenziedi/tp-foyer:v1"
-                    
-                }
-            }
-        }
         stage('run docker compose'){
             steps{
                 script {
