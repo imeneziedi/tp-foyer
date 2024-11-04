@@ -24,12 +24,12 @@ pipeline {
             }
         }
 
-        stage("PUBLISH TO NEXUS") {
-            steps {
-                // sh 'mvn deploy'
-                echo "mvn deploy"
-            }
-        }
+        // stage("PUBLISH TO NEXUS") {
+        //     steps {
+        //         // sh 'mvn deploy'
+        //         echo "mvn deploy"
+        //     }
+        // }
         stage('Building docker  image') {
             steps {
                 script {
