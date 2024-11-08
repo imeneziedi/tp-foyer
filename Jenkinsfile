@@ -66,7 +66,7 @@ pipeline {
 stage('Build Docker Image') {
                       steps {
                           script {
-                            sh 'docker build -t imenziedi/tpFoyer:back .'
+                            sh 'docker build -t imenziedi/tpfoyer:back .'
                           }
                       }
                   }
