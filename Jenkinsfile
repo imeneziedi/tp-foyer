@@ -7,7 +7,7 @@ pipeline {
             steps{
       			checkout([$class: 'GitSCM', branches: [[name: '*/imenziedi']],
 			extensions: [],
-            userRemoteConfigs: [[url: 'https://github.com/imeneziedi/tp-foyer/tree/imenziedi']]])
+            userRemoteConfigs: [[url: 'https://github.com/imeneziedi/tp-foyer']]])
 
             }
         }
