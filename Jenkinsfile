@@ -91,7 +91,7 @@ stage('Build Docker Image') {
 
                                             }
 
-	    
+	    }
       
 
         // stage('run docker compose'){
