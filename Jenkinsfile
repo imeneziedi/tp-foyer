@@ -80,7 +80,7 @@ stage('Build Docker Image') {
 
 	                      stage('Push Docker Image') {
                                         steps {
-                                   sh 'docker push imenziedi/tpFoyer:back'
+                                   sh 'docker push imenziedi/tpfoyer:back'
                                             }
 		  }
 
