@@ -3,7 +3,36 @@ pipeline {
 
     stages {
 
-                    
+         stage('Getting project from Git') {
+            steps{
+      			checkout([$class: 'GitSCM', branches: [[name: '*/imenziedi']],
+			extensions: [],
+            userRemoteConfigs: [[url: 'https://github.com/imeneziedi/tp-foyer/tree/imenziedi']]])
+
+            }
+        }
+
+
+        stage('Cleaning the project') {
+                    steps{
+                            sh "mvn -B -DskipTests clean  "
+
+                    }
+                }
+
+
+        stage('Artifact Construction') {
+            steps{
+                	sh "mvn -B -DskipTests package "
+            }
+        }
+
+        stage('Unit Tests') {
+            steps{
+               		 sh "mvn test "
+            }
+        }
+        
         stage ('maven sonar') {
             steps {
                 
@@ -34,15 +63,15 @@ pipeline {
             }
         }
 
-        stage('run docker compose'){
-            steps{
-                script {
+        // stage('run docker compose'){
+        //     steps{
+        //         script {
                      
-                        sh " sudo docker compose up"
+        //                 sh " sudo docker compose up"
                     
-                }
-            }
-        }
+        //         }
+        //     }
+        // }
 
       
     }
