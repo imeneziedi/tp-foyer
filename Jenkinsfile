@@ -63,9 +63,22 @@ pipeline {
         stage('Building docker  image') {
             steps {
                 script {
-                    sh "docker build ./ -t imenziedi/tp-foyer:v1"
+
+                    sh " docker build ./ -t nagui69/kaddem:abdelhak "
                    
                    
+                }
+            }
+        }
+
+
+
+        stage('push docker  image'){
+            steps{
+                script {
+                     docker.withRegistry('', registryCredential) {
+                        sh " docker push nagui69/kaddem:abdelhak "
+                    }
                 }
             }
         }
