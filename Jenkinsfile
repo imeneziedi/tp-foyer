@@ -83,7 +83,7 @@ stage('Build Docker Image') {
 	     stage('Push Docker Image') {
                                         steps {
                                         echo"docker push"
-                                        sh 'docker push -t imenziedi/spring-app-bi:imenziedi-5bi-G1 .'
+                                        sh 'docker push imenziedi/spring-app-bi:imenziedi-5bi-G1 .'
 
                                             }
 
