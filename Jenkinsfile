@@ -66,7 +66,7 @@ pipeline {
 stage('Build Docker Image') {
                       steps {
                           script {
-                            sh 'docker build -t imenziedi/tpfoyer:back .'
+                            sh 'docker build -t imenziedi/spring-app-bi:imenziedi-5bi-G1 .'
                           }
                       }
                   }
@@ -84,7 +84,12 @@ stage('Build Docker Image') {
                                             }
 		  }
 
-	    
+	     stage('Push Docker Image') {
+                                        steps {
+                                        echo"docker push"
+                                        sh 'docker push -t imenziedi/spring-app-bi:imenziedi-5bi-G1 .'
+
+                                            }
 
 	    
       
