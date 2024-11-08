@@ -59,29 +59,35 @@ pipeline {
             }
         }
 
+
+
+
+
+stage('Build Docker Image') {
+                      steps {
+                          script {
+                            sh 'docker build -t imenziedi/tpFoyer:back .'
+                          }
+                      }
+                  }
+
+                  stage('login dockerhub') {
+                                        steps {
+
+				sh 'docker login -u imenziedi --password dckr_pat_7kFuYWIAlB0Tsaec-YEeMViB2Dc'
+                                            }
+		  }
+
+	                      stage('Push Docker Image') {
+                                        steps {
+                                   sh 'docker push imenziedi/tpFoyer:back'
+                                            }
+		  }
+
 	    
-        stage('Building docker  image') {
-            steps {
-                script {
 
-                    sh " docker build ./ -t nagui69/kaddem:abdelhak "
-                   
-                   
-                }
-            }
-        }
-
-
-
-        stage('push docker  image'){
-            steps{
-                script {
-                     docker.withRegistry('', registryCredential) {
-                        sh " docker push nagui69/kaddem:abdelhak "
-                    }
-                }
-            }
-        }
+	    
+      
 
         // stage('run docker compose'){
         //     steps{
